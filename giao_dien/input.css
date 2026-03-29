@@ -1,0 +1,121 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BACKGROUND FULL ===== */
+.stApp {
+    background: url("https://i.pinimg.com/1200x/36/03/62/36036279ace66aa1d886322fd7d633a4.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Overlay sáng */
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.65);
+    z-index: -1;
+}
+
+/* ===== GLASS UI ===== */
+.block-container {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+    max-width: 1000px;
+}
+
+
+/* ===== TEXT ===== */
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+    color: #222 !important;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.card {
+    color: #222 !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+/* ===== BUTTON ===== */
+.stButton > button {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.stButton > button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+    border-radius: 12px !important;
+    border: 1px solid #ddd !important;
+}
+
+/* ===== SIDEBAR TRẮNG + ẨN CHỮ ===== */
+section[data-testid="stSidebar"] {
+    background: rgb(0, 0, 0) !important;
+}
+
+/* Ẩn chữ sidebar */
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* ===== SCROLL ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+/* ===== FIX TEXT OUTPUT ===== */
+.stMarkdown, 
+.stText, 
+div[data-testid="stMarkdownContainer"] {
+    color: #222 !important;
+}
+
+/* fix riêng phần result box nếu có */
+.result-box {
+    color: #222 !important;
+}
