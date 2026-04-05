@@ -65,80 +65,80 @@ st.markdown("""
 st.markdown('<div class="card" style="text-align:center;">✅ Ready to try? Go to <b>Input page</b>!</div>', unsafe_allow_html=True)
 
 
-import streamlit as st
-import streamlit.components.v1 as components
+# import streamlit as st
+# import streamlit.components.v1 as components
 
-st.title("Test Cat 🐱")
+# st.title("Test Cat 🐱")
 
 # ===== CAT MOVING (JS) =====
-components.html("""
-<html>
-<body style="margin:0; overflow:hidden;">
+# components.html("""
+# <html>
+# <body style="margin:0; overflow:hidden;">
 
-<div id="container"></div>
+# <div id="container"></div>
 
-<script>
-const container = document.getElementById("container");
+# <script>
+# const container = document.getElementById("container");
 
-// 🐱 danh sách ảnh (có thể thêm)
-const images = [
-    "https://i.pinimg.com/originals/2a/97/20/2a972054847bc3f0412083ac13871873.gif",
-    "https://i.pinimg.com/736x/d0/b0/ad/d0b0ad9455df702aa7dab8ab12b41a72.jpg"
-];
+# // 🐱 danh sách ảnh (có thể thêm)
+# const images = [
+#     "https://i.pinimg.com/originals/2a/97/20/2a972054847bc3f0412083ac13871873.gif",
+#     "https://i.pinimg.com/736x/d0/b0/ad/d0b0ad9455df702aa7dab8ab12b41a72.jpg"
+# ];
 
-// tạo vật rơi
-function spawnItem() {
-    const item = document.createElement("img");
+# // tạo vật rơi
+# function spawnItem() {
+#     const item = document.createElement("img");
 
-    item.src = images[Math.floor(Math.random() * images.length)];
+#     item.src = images[Math.floor(Math.random() * images.length)];
 
-    item.style.position = "fixed";
-    item.style.top = "-120px"; // bắt đầu ngoài màn hình
-    item.style.left = Math.random() * (window.innerWidth - 100) + "px";
-    item.style.width = "100px";
-    item.style.zIndex = "9999";
-    item.style.cursor = "pointer";
+#     item.style.position = "fixed";
+#     item.style.top = "-120px"; // bắt đầu ngoài màn hình
+#     item.style.left = Math.random() * (window.innerWidth - 100) + "px";
+#     item.style.width = "100px";
+#     item.style.zIndex = "9999";
+#     item.style.cursor = "pointer";
 
-    container.appendChild(item);
+#     container.appendChild(item);
 
-    let y = -120;
-    let rotation = 0;
-    let speed = 1.5 + Math.random() * 2;
+#     let y = -120;
+#     let rotation = 0;
+#     let speed = 1.5 + Math.random() * 2;
 
-    function fall() {
-        y += speed;
-        rotation += 3;
+#     function fall() {
+#         y += speed;
+#         rotation += 3;
 
-        item.style.top = y + "px";
-        item.style.transform = "rotate(" + rotation + "deg)";
+#         item.style.top = y + "px";
+#         item.style.transform = "rotate(" + rotation + "deg)";
 
-        if (y < window.innerHeight) {
-            requestAnimationFrame(fall);
-        } else {
-            item.remove();
-        }
-    }
+#         if (y < window.innerHeight) {
+#             requestAnimationFrame(fall);
+#         } else {
+#             item.remove();
+#         }
+#     }
 
-    fall();
+#     fall();
 
-    // 💥 CLICK NỔ
-    item.onclick = () => {
-        item.style.transition = "0.2s";
-        item.style.transform = "scale(2) rotate(360deg)";
-        item.style.opacity = "0";
-        setTimeout(() => item.remove(), 200);
-    };
-}
+#     // 💥 CLICK NỔ
+#     item.onclick = () => {
+#         item.style.transition = "0.2s";
+#         item.style.transform = "scale(2) rotate(360deg)";
+#         item.style.opacity = "0";
+#         setTimeout(() => item.remove(), 200);
+#     };
+# }
 
-// ⏱️ spawn liên tục
-setInterval(() => {
-    const count = Math.floor(Math.random() * 3) + 1; // 1-3 con
-    for (let i = 0; i < count; i++) {
-        spawnItem();
-    }
-}, 2000);
+# // ⏱️ spawn liên tục
+# setInterval(() => {
+#     const count = Math.floor(Math.random() * 3) + 1; // 1-3 con
+#     for (let i = 0; i < count; i++) {
+#         spawnItem();
+#     }
+# }, 2000);
 
-</script>
-</body>
-</html>
-""", height=500)
+# </script>
+# </body>
+# </html>
+# """, height=500)

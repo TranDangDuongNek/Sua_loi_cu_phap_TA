@@ -14,10 +14,10 @@ def check_with_dataset(text):
     for _, row in df.iterrows():
         if text.strip().lower() == row["Ungrammatical Statement"].lower():
             return f"""
-❌ Error Type: {row["Error Type"]}
-❌ Wrong: {row["Ungrammatical Statement"]}
+Error Type: {row["Error Type"]}
+Wrong: {row["Ungrammatical Statement"]}
 
-✔ Correct: {row["Standard English"]}
+Correct: {row["Standard English"]}
 """
     return None
 
